@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
     import sys
-    
+
     # Initialize the sum to 0
     total_sum = 0
 
-    # Loop through all arguments starting from index 1 (skipping the script name)
+    # Loop through all args starting from index 1 (skipping the script name)
     for arg in sys.argv[1:]:
         try:
             # Convert each argument to an integer and add to the sum
