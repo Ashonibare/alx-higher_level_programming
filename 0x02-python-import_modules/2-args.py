@@ -1,14 +1,16 @@
 #!/usr/bin/python3
-import sys
-
-# Get the number of arguments (excluding the script name)
-num_args = len(sys.argv) - 1
-
-# Determine if the output should use "argument" or "arguments"
-arg_word = "argument" if num_args == 1 else "arguments"
-
-# Prepare the list of arguments, joined by newlines
-args_list = "\n".join(sys.argv[1:])
-
-# Print the number of arguments and the arguments list in one print statement
-print("{} {}{}".format(num_args, arg_word, f":\n{args_list}" if num_args > 0 else ""))
+if __name__ == "__main__":
+    import sys
+    
+    # Retrieve the number of arguments (excluding the script name)
+    num_args = len(sys.argv) - 1
+    
+    # Determine the correct wording for "argument" or "arguments"
+    if num_args == 0:
+        print("0 arguments.")
+    else:
+        print("{} argument{}:".format(num_args, "" if num_args == 1 else "s"))
+        
+        # Print each argument with its position
+        for i in range(1, len(sys.argv)):
+            print("{}: {}".format(i, sys.argv[i]))
