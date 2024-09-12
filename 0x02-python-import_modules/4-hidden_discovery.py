@@ -4,4 +4,4 @@ if __name__ == "__main__":
     allf = dir()
     for m in range(0, len(allf)):
         if allf[m][:2] != "__":
-            print("{s}".format(allf[m]))
+            print("{:s}".format(allf[m]))
