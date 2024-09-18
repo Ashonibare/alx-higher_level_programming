@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def uniq_add(my_list=[]):
     unique_integers = set()  # Set to track unique integers
     total_sum = 0  # Initialize sum to 0
