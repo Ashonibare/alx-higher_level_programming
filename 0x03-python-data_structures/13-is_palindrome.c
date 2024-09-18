@@ -17,7 +17,7 @@ int is_palindrome(listint_t **head)
 	listint_t *tmp;
 	listint_t *middle;
 
-	if (head == NULL || *head == NULL
+	if (head == NULL || *head == NULL)
 		return (1);
 	tmp = *head;
 	middle = *head;
@@ -39,7 +39,6 @@ int is_palindrome(listint_t **head)
 
 	return (1)
 }
-
 /**
  * is_palindrome - Checks if a singly linked list is a palindrome.
  * @head: A pointer to the head of the linked list.
@@ -53,7 +52,7 @@ int compare_lists(listint_t *head, listint_t *middle, int len)
 
 	if (head == NULL || middle == NULL)
 		return (1);
-	for (i = 0; i < len; i++);
+	for (i = 0; i < len; i++)
 	{
 		if (head->n != middle->n)
 			return  (0);
