@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 void reverse(listint_t **head);
-int copare_lists(listint_t *head, listint_t *middle, int len);
+int compare_lists(listint_t *head, listint_t *middle, int len);
 
 /**
  * reverse_listint - Reverses a singly-linked listint_t list.
@@ -35,7 +35,7 @@ int is_palindrome(listint_t **head)
 		len = len - 1;
 	}
 	reverse(&middle);
-	i = copare_lists(*head, middle, len);
+	i = compare_lists(*head, middle, len);
 
 	return (1);
 }
