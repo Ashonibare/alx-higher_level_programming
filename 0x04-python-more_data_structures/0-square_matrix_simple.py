@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def square_matrixsimple(matrix=[]):
     squared_matrix = []  # empty list to store the sqaured ints
 
