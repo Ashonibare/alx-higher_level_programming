@@ -1,16 +1,15 @@
 #include "lists.h"
 #include <stdio.h>
 
-/* Function prototypes */
 void reverse(listint_t **head);
 int compare_lists(listint_t *head, listint_t *middle, int len);
 
 /**
- * is_palindrome - Checks if a singly linked list is a palindrome.
- * @head: A pointer to the head of the linked list.
+ * reverse_listint - Reverses a singly-linked listint_t list.
+ * @head: A pointer to the starting node of the list to reverse.
  *
- * Return: If the linked list is not a palindrome - 0.
- *         If the linked list is a palindrome - 1.
+ * Return: 0 if palindrome is not detected 
+ *Return: 1 if palindrome is detected
  */
 int is_palindrome(listint_t **head)
 {
@@ -20,43 +19,32 @@ int is_palindrome(listint_t **head)
 
     if (head == NULL || *head == NULL)
         return (1);
-
     tmp = *head;
     middle = *head;
 
-    // Calculate the length of the list
     for (len = 0; tmp != NULL; len++)
         tmp = tmp->next;
 
     len = len / 2;
 
-    // Move middle to the middle of the list
-    for (i = 0; i < len; i++)
+    for (i = 1; i < len; i++)
         middle = middle->next;
-
-    // If the length is odd, move middle one step further
-    if (len % 2 != 0)
+    if (len % 2 != 0 && len != 1)
     {
         middle = middle->next;
         len = len - 1;
     }
-
-    // Reverse the second half of the list
     reverse(&middle);
-
-    // Compare the two halves
     i = compare_lists(*head, middle, len);
 
-    return (i);
+    return (1);
 }
-
 /**
- * compare_lists - Compares two halves of a list to check for palindrome.
- * @head: The start of the first half of the list.
- * @middle: The start of the reversed second half of the list.
- * @len: The length of the list to compare.
+ * is_palindrome - Checks if a singly linked list is a palindrome.
+ * @head: A pointer to the head of the linked list.
  *
- * Return: 1 if the lists are the same, 0 otherwise.
+ * Return: If the linked list is not a palindrome - 0.
+ *         If the linked list is a palindrome - 1.
  */
 int compare_lists(listint_t *head, listint_t *middle, int len)
 {
@@ -64,20 +52,20 @@ int compare_lists(listint_t *head, listint_t *middle, int len)
 
     if (head == NULL || middle == NULL)
         return (1);
-
     for (i = 0; i < len; i++)
     {
         if (head->n != middle->n)
-            return (0);
+            return  (0);
         head = head->next;
         middle = middle->next;
     }
     return (1);
 }
-
 /**
- * reverse - Reverses a singly linked list.
- * @head: A pointer to the pointer to the head of the list.
+ *
+ *
+ *
+ *
  */
 void reverse(listint_t **head)
 {
@@ -89,7 +77,7 @@ void reverse(listint_t **head)
         return;
 
     prev = NULL;
-    current = *head;
+    current = * head;
     while (current != NULL)
     {
         next = current->next;
