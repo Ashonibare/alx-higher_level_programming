@@ -28,16 +28,16 @@ int is_palindrome(listint_t **head)
 	len = len / 2;
 
 	for (i = 1; i < len; i++)
-		middle = middle->next
+		middle = middle->next;
 	if (len % 2 != 0 && len != 1)
 	{
 		middle = middle->next;
 		len = len - 1;
 	}
 	reverse(&middle);
-	i = compare_lists(*head, middle, len);
+	i = copare_lists(*head, middle, len);
 
-	return (1)
+	return (1);
 }
 /**
  * is_palindrome - Checks if a singly linked list is a palindrome.
