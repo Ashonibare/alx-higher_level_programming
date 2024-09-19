@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def weight_average(my_list=[]):
     if not my_list:  # Return 0 if the list is empty
         return 0
