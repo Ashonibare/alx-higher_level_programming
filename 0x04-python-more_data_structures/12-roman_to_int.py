@@ -26,5 +26,3 @@ def roman_to_int(roman_string):
         prev_value = value  # Update previous value for the next iteration
 
     return total
-
-
