@@ -4,7 +4,7 @@ import sys
 
 def safe_function(fct, *args):
 	try:
-		num_div = (fct, *args)
+		num_div = fct(*args)
 		return num_div
 
 	except (ValueError, TypeError, ZeroDivisionError, IndexError):
